@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap");
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Quicksand", sans-serif;
+        }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: #111;
+            width: 100%;
+            overflow: hidden;
+        }
+        .ring {
+            position: relative;
+            width: 500px;
+            height: 500px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .ring i {
+            position: absolute;
+            inset: 0;
+            border: 2px solid #fff;
+            transition: 0.5s;
+        }
+        .ring i:nth-child(1) {
+            border-radius: 38% 62% 63% 37% / 41% 44% 56% 59%;
+            animation: animate 6s linear infinite;
+        }
+        .ring i:nth-child(2) {
+            border-radius: 41% 44% 56% 59%/38% 62% 63% 37%;
+            animation: animate 4s linear infinite;
+        }
+        .ring i:nth-child(3) {
+            border-radius: 41% 44% 56% 59%/38% 62% 63% 37%;
+            animation: animate2 10s linear infinite;
+        }
+        .ring:hover i {
+            border: 6px solid var(--clr);
+            filter: drop-shadow(0 0 20px var(--clr));
+        }
+        @keyframes animate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        @keyframes animate2 {
+            0% { transform: rotate(360deg); }
+            100% { transform: rotate(0deg); }
+        }
+        .login {
+            position: absolute;
+            width: 300px;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap: 20px;
+            padding: 20px;
+        }
+        .login h2 {
+            font-size: 2em;
+            color: #fff;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        .login .inputBx {
+            position: relative;
+            width: 100%;
+            margin-bottom: 10px;
+        }
+        .login .inputBx input {
+            position: relative;
+            width: 100%;
+            padding: 12px 20px;
+            background: transparent;
+            border: 2px solid #fff;
+            border-radius: 40px;
+            font-size: 1.2em;
+            color: #fff;
+            box-shadow: none;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+        .login .inputBx input:focus {
+            border-color: #64ffda;
+            box-shadow: 0 0 15px rgba(100, 255, 218, 0.3);
+        }
+        .login .inputBx input[type="submit"] {
+            width: 100%;
+            background: linear-gradient(45deg, #64ffda, #00ff66);
+            border: none;
+            cursor: pointer;
+            font-weight: 600;
+            margin-top: 10px;
+        }
+        .login .inputBx input[type="submit"]:hover {
+            background: linear-gradient(45deg, #00ff66, #64ffda);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(100, 255, 218, 0.3);
+        }
+        .login .inputBx input::placeholder {
+            color: rgba(255, 255, 255, 0.75);
+        }
+        .login .links {
+            position: relative;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 20px;
+            margin-top: 10px;
+        }
+        .login .links a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 0.9em;
+            transition: color 0.3s ease;
+        }
+        .login .links a:hover {
+            color: #64ffda;
+        }
+
+        /* Медиа-запросы для мобильных устройств */
+        @media (max-width: 768px) {
+            .ring {
+                width: 300px;
+                height: 300px;
+            }
+            
+            .login {
+                width: 280px;
+                padding: 20px;
+            }
+
+            .login h2 {
+                font-size: 1.8em;
+                margin-bottom: 20px;
+            }
+
+            .login .inputBx {
+                margin-bottom: 15px;
+            }
+
+            .login .inputBx input {
+                font-size: 1em;
+                padding: 10px 15px;
+            }
+
+            .login .links {
+                flex-direction: row;
+                gap: 20px;
+                justify-content: center;
+                margin-top: 20px;
+            }
+
+            .login .links a {
+                font-size: 0.9em;
+            }
+
+            .ring i {
+                border-width: 2px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .ring {
+                width: 260px;
+                height: 260px;
+            }
+
+            .login {
+                width: 240px;
+                padding: 15px;
+            }
+
+            .login h2 {
+                font-size: 1.6em;
+            }
+
+            .login .inputBx input {
+                padding: 8px 12px;
+                font-size: 0.9em;
+            }
+
+            .login .links {
+                padding: 0 10px;
+            }
+
+            .login .links a {
+                font-size: 0.8em;
+            }
+        }
+
+        /* Анимация появления */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .login {
+            animation: fadeIn 0.5s ease forwards;
+        }
+    </style>
+</head>
+<body>
+    <div class="ring">
+        <i style="--clr:#00ff0a;"></i>
+        <i style="--clr:#ff0057;"></i>
+        <i style="--clr:#fffd44;"></i>
+        <div class="login">
+            <h2>Login</h2>
+            <div class="inputBx">
+                <input type="text" placeholder="Username">
+            </div>
+            <div class="inputBx">
+                <input type="password" placeholder="Password">
+            </div>
+            <div class="inputBx">
+                <input type="submit" value="Sign in">
+            </div>
+            <div class="links">
+                <a href="#">Forget Password</a>
+                <a href="#">Signup</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

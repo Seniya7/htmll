@@ -422,4 +422,20 @@ document.addEventListener("DOMContentLoaded", () => {
             });
         });
     }
+
+    // Обработчики для кнопок Login и Buy Plan
+    const loginBtn = document.querySelector('.login-btn');
+    const buyPlanBtn = document.querySelector('.buy-plan-btn');
+
+    // Обработчик для кнопки Login
+    loginBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        window.location.href = 'login.html';
+    });
+
+    // Обработчик для кнопки Buy Plan
+    buyPlanBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        window.location.href = 'login.html';
+    });
 });

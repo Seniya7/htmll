@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TradePro</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Добавляем Font Awesome для иконок -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <canvas id="neuro"></canvas>
+    
+    <header>
+        <div class="logo">TradePro</div>
+        <nav>
+            <a href="#home" data-translate="home">Home</a>
+            <a href="#features" data-translate="features">Features</a>
+            <a href="#about" data-translate="about">About</a>
+            <a href="#faq" data-translate="faq">FAQ</a>
+            <div class="language-dropdown">
+                <button class="dropbtn">
+                    <span class="selected-lang">EN</span>
+                    <span class="arrow">▼</span>
+                </button>
+                <div class="dropdown-content">
+                    <a href="#" data-lang="en">
+                        <span>🇬🇧</span> English
+                    </a>
+                    <a href="#" data-lang="ru">
+                        <span>🇷🇺</span> Русский
+                    </a>
+                    <a href="#" data-lang="ua">
+                        <span>🇺🇦</span> Українська
+                    </a>
+                </div>
+            </div>
+            <button class="get-started" data-translate="getStarted">Get Started</button>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1>
+                <span data-translate="nextGen">Next Generation</span><br>
+                <span data-translate="tradingPlatform">Trading Platform</span>
+            </h1>
+            <p data-translate="advancedTools">Advanced tools for professional traders</p>
+            <div class="hero-buttons">
+                <button class="start-trading" data-translate="startTrading">Start Trading</button>
+                <button class="learn-more" data-translate="learnMore">Learn More</button>
+            </div>
+        </section>
+
+        <section class="features">
+            <div class="feature">
+                <span class="icon">📊</span>
+                <h3 data-translate="realTimeAnalytics">Real-time Analytics</h3>
+                <p data-translate="analyticsDesc">Advanced market analysis tools</p>
+            </div>
+            <div class="feature">
+                <span class="icon">🔒</span>
+                <h3 data-translate="secureTrading">Secure Trading</h3>
+                <p data-translate="securityDesc">Enterprise-grade security</p>
+            </div>
+            <div class="feature">
+                <span class="icon">⚡</span>
+                <h3 data-translate="fastExecution">Fast Execution</h3>
+                <p data-translate="executionDesc">Lightning-fast order execution</p>
+            </div>
+            <div class="feature">
+                <span class="icon">🤖</span>
+                <h3 data-translate="aiPowered">AI Powered</h3>
+                <p data-translate="aiDesc">Smart trading algorithms</p>
+            </div>
+        </section>
+
+        <section class="pricing">
+            <h2 data-translate="choosePlan">Choose Your Plan</h2>
+            <div class="pricing-cards">
+                <div class="price-card">
+                    <h3 data-translate="starter">Starter</h3>
+                    <div class="price">$29<span>/mo</span></div>
+                    <ul>
+                        <li data-translate="basicAnalytics">Basic Analytics</li>
+                        <li data-translate="tradingPairs">5 Trading Pairs</li>
+                        <li data-translate="standardSupport">Standard Support</li>
+                    </ul>
+                    <button data-translate="selectPlan">Select Plan</button>
+                </div>
+
+                <div class="price-card popular">
+                    <div class="popular-badge" data-translate="popular">Popular</div>
+                    <h3 data-translate="professional">Professional</h3>
+                    <div class="price">$99<span>/mo</span></div>
+                    <ul>
+                        <li data-translate="advancedAnalytics">Advanced Analytics</li>
+                        <li data-translate="unlimitedTrading">Unlimited Trading</li>
+                        <li data-translate="support247">24/7 Support</li>
+                    </ul>
+                    <button data-translate="selectPlan">Select Plan</button>
+                </div>
+
+                <div class="price-card">
+                    <h3 data-translate="enterprise">Enterprise</h3>
+                    <div class="price" data-translate="custom">Custom</div>
+                    <ul>
+                        <li data-translate="customSolutions">Custom Solutions</li>
+                        <li data-translate="dedicatedServer">Dedicated Server</li>
+                        <li data-translate="personalManager">Personal Manager</li>
+                    </ul>
+                    <button data-translate="contactUs">Contact Us</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3 data-translate="aboutCompany">О компании</h3>
+                <p data-translate="companyDesc">TradePro - ведущая платформа для профессиональной торговли с передовыми технологиями и инновационными решениями.</p>
+            </div>
+            <div class="footer-section">
+                <h3 data-translate="contacts">Контакты</h3>
+                <p><i class="fas fa-envelope"></i> support@tradepro.com</p>
+                <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
+            </div>
+            <div class="footer-section">
+                <h3 data-translate="social">Социальные сети</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-telegram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p data-translate="copyright">© 2024 TradePro. Все права защищены.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script type="x-shader/x-vertex" id="vertShader">
+        precision mediump float;
+
+        varying vec2 vUv;
+        attribute vec2 a_position;
+
+        void main() {
+            vUv = .5 * (a_position + 1.);
+            gl_Position = vec4(a_position, 0.0, 1.0);
+        }
+    </script>
+
+    <script type="x-shader/x-fragment" id="fragShader">
+        precision mediump float;
+
+        varying vec2 vUv;
+        uniform float u_time;
+        uniform float u_ratio;
+        uniform vec2 u_pointer_position;
+        uniform float u_scroll_progress;
+
+        vec2 rotate(vec2 uv, float th) {
+            return mat2(cos(th), sin(th), -sin(th), cos(th)) * uv;
+        }
+
+        float neuro_shape(vec2 uv, float t, float p) {
+            vec2 sine_acc = vec2(0.);
+            vec2 res = vec2(0.);
+            float scale = 8.;
+
+            for (int j = 0; j < 15; j++) {
+                uv = rotate(uv, 1.);
+                sine_acc = rotate(sine_acc, 1.);
+                vec2 layer = uv * scale + float(j) + sine_acc - t;
+                sine_acc += sin(layer);
+                res += (.5 + .5 * cos(layer)) / scale;
+                scale *= (1.2 - .07 * p);
+            }
+            return res.x + res.y;
+        }
+
+        void main() {
+            vec2 uv = .5 * vUv;
+            uv.x *= u_ratio;
+
+            vec2 pointer = vUv - u_pointer_position;
+            pointer.x *= u_ratio;
+            float p = clamp(length(pointer), 0., 1.);
+            p = .5 * pow(1. - p, 2.);
+
+            float t = .001 * u_time;
+            vec3 color = vec3(0.);
+
+            float noise = neuro_shape(uv, t, p);
+
+            noise = 1.2 * pow(noise, 3.);
+            noise += pow(noise, 10.);
+            noise = max(.0, noise - .5);
+            noise *= (1. - length(vUv - .5));
+
+            // Используем зеленый цвет для соответствия дизайну
+            color = vec3(0.0, 1.0, 0.4);
+
+            color = color * noise;
+
+            gl_FragColor = vec4(color, noise);
+        }
+    </script>
+    <script defer src="background.js"></script>
+</body>
+</html>

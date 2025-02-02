@@ -1,0 +1,3484 @@
+/* Импорт шрифтов */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* Анимации */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes glow {
+    0% { box-shadow: 0 0 5px rgba(100, 255, 218, 0.3); }
+    50% { box-shadow: 0 0 20px rgba(100, 255, 218, 0.5); }
+    100% { box-shadow: 0 0 5px rgba(100, 255, 218, 0.3); }
+}
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+
+/* Анимация свечения границ */
+@keyframes borderGlow {
+    0% {
+        border-color: rgba(100, 255, 218, 0.3);
+        box-shadow: 
+            0 0 10px rgba(100, 255, 218, 0.2),
+            inset 0 0 10px rgba(100, 255, 218, 0.1);
+    }
+    50% {
+        border-color: rgba(100, 255, 218, 0.6);
+        box-shadow: 
+            0 0 20px rgba(100, 255, 218, 0.4),
+            inset 0 0 20px rgba(100, 255, 218, 0.2);
+    }
+    100% {
+        border-color: rgba(100, 255, 218, 0.3);
+        box-shadow: 
+            0 0 10px rgba(100, 255, 218, 0.2),
+            inset 0 0 10px rgba(100, 255, 218, 0.1);
+    }
+}
+
+/* Анимация бегущего света */
+@keyframes lightBeam {
+    0% {
+        background-position: -100% 0;
+    }
+    100% {
+        background-position: 200% 0;
+    }
+}
+
+/* Анимация свечения для окна навигации */
+@keyframes windowGlow {
+    0% {
+        box-shadow: 
+            0 0 10px rgba(100, 255, 218, 0.1),
+            inset 0 0 5px rgba(100, 255, 218, 0.05);
+        border-color: rgba(100, 255, 218, 0.2);
+    }
+    50% {
+        box-shadow: 
+            0 0 20px rgba(100, 255, 218, 0.2),
+            inset 0 0 10px rgba(100, 255, 218, 0.1);
+        border-color: rgba(100, 255, 218, 0.4);
+    }
+    100% {
+        box-shadow: 
+            0 0 10px rgba(100, 255, 218, 0.1),
+            inset 0 0 5px rgba(100, 255, 218, 0.05);
+        border-color: rgba(100, 255, 218, 0.2);
+    }
+}
+
+/* Анимация переливания текста */
+@keyframes textShine {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Анимация свечения текста */
+@keyframes textGlow {
+    0% {
+        text-shadow: 
+            0 0 10px rgba(100, 255, 218, 0.3),
+            0 0 20px rgba(100, 255, 218, 0.3),
+            0 0 30px rgba(100, 255, 218, 0.3);
+    }
+    50% {
+        text-shadow: 
+            0 0 20px rgba(100, 255, 218, 0.5),
+            0 0 40px rgba(100, 255, 218, 0.5),
+            0 0 60px rgba(100, 255, 218, 0.5);
+    }
+    100% {
+        text-shadow: 
+            0 0 10px rgba(100, 255, 218, 0.3),
+            0 0 20px rgba(100, 255, 218, 0.3),
+            0 0 30px rgba(100, 255, 218, 0.3);
+    }
+}
+
+/* Обновленные стили для заголовка */
+h1.hero-title {
+    background: linear-gradient(
+        120deg,
+        #64ffda 0%,
+        #ffffff 25%,
+        #64ffda 50%,
+        #ffffff 75%,
+        #64ffda 100%
+    );
+    background-size: 200% auto;
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    animation: 
+        textShine 4s linear infinite,
+        textGlow 3s ease-in-out infinite;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    filter: drop-shadow(0 0 8px rgba(100, 255, 218, 0.3));
+    font-size: 3rem;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Для поддержки разных браузеров */
+@supports not (background-clip: text) {
+    h1.hero-title {
+        color: #64ffda;
+    }
+}
+
+/* Медиа-запрос для мобильных устройств */
+@media (max-width: 768px) {
+    h1.hero-title {
+        font-size: 2rem;
+        background-size: 150% auto;
+        filter: drop-shadow(0 0 5px rgba(100, 255, 218, 0.2));
+    }
+}
+
+/* Базовые стили */
+body, html {
+    margin: 0;
+    padding: 0;
+    background-color: #151912;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    color: #FFF6F7;
+    overflow-x: hidden;
+}
+
+/* Существующие стили для фона и canvas */
+canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.content {
+    position: relative;
+    z-index: 1;
+}
+
+/* Header & Navigation */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(21, 25, 18, 0.8);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    background: linear-gradient(45deg, #00ff66, #00ffcc);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.mobile-menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #00ff66;
+}
+
+.get-started {
+    background: rgba(0, 255, 102, 0.1);
+    border: 1px solid #00ff66;
+    color: #00ff66;
+    padding: 10px 24px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.get-started:hover {
+    background: #00ff66;
+    color: #151912;
+}
+
+/* Language Dropdown */
+.language-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropbtn {
+    background: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background: rgba(21, 25, 18, 0.95);
+    min-width: 160px;
+    border-radius: 8px;
+    padding: 8px 0;
+    z-index: 1;
+}
+
+.dropdown-content a {
+    padding: 12px 16px;
+    display: block;
+}
+
+.language-dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Hero Section */
+.hero {
+    padding: 180px 40px 100px;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.hero h1 span {
+    display: block;
+}
+
+.hero p {
+    font-size: 20px;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 40px;
+}
+
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.primary-btn, .secondary-btn {
+    padding: 15px 40px;
+    border-radius: 8px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.primary-btn {
+    background: #00ff66;
+    border: none;
+    color: #151912;
+}
+
+.secondary-btn {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #fff;
+}
+
+/* Медиа-запросы для мобильных устройств */
+@media (max-width: 768px) {
+    /* Header & Navigation */
+    header {
+        padding: 15px 20px;
+    }
+
+    .mobile-menu-btn {
+        display: block;
+    }
+
+    nav {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 80%;
+        height: 100vh;
+        background: rgba(21, 25, 18, 0.95);
+        backdrop-filter: blur(10px);
+        flex-direction: column;
+        padding: 80px 40px;
+        transition: right 0.3s ease;
+    }
+
+    nav.active {
+        right: 0;
+    }
+
+    nav a {
+        font-size: 24px;
+        margin: 15px 0;
+    }
+
+    .language-dropdown {
+        margin: 20px 0;
+    }
+
+    .get-started {
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    /* Hero Section */
+    .hero {
+        padding: 120px 20px 60px;
+    }
+
+    .hero h1 {
+        font-size: 36px;
+    }
+
+    .hero p {
+        font-size: 18px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .primary-btn, .secondary-btn {
+        width: 100%;
+    }
+
+    /* Sections Common */
+    section {
+        padding: 60px 20px;
+    }
+
+    /* Footer */
+    .main-footer {
+        padding: 40px 20px;
+    }
+
+    .footer-grid {
+        flex-direction: column;
+        text-align: center;
+        gap: 30px;
+    }
+
+    .social-links {
+        justify-content: center;
+    }
+}
+
+/* Дополнительные медиа-запросы для очень маленьких экранов */
+@media (max-width: 380px) {
+    .hero h1 {
+        font-size: 32px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+}
+
+/* Анимации */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in {
+    animation: fadeIn 0.5s ease-out forwards;
+}
+
+/* Контент и Canvas */
+canvas#neuro {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    pointer-events: none;
+    opacity: .95;
+    z-index: 0;
+}
+
+/* Шапка */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    backdrop-filter: blur(10px);
+    background: rgba(21, 25, 18, 0.5);
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: bold;
+    background: linear-gradient(45deg, #00ff66, #00ffcc);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+nav a {
+    color: #FFF6F7;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #00ff66;
+}
+
+/* Кнопки */
+.get-started, .primary-btn {
+    background: linear-gradient(45deg, #00ff66, #00ffcc);
+    color: #151912;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.get-started:hover, .primary-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 255, 102, 0.3);
+}
+
+.secondary-btn {
+    background: rgba(0, 255, 102, 0.1);
+    color: #00ff66;
+    border: 1px solid #00ff66;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.secondary-btn:hover {
+    background: rgba(0, 255, 102, 0.2);
+}
+
+/* Hero секция */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 20px;
+    margin-top: 40px;
+}
+
+/* Статистика */
+.stats {
+    display: flex;
+    gap: 60px;
+    margin-top: 80px;
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-number {
+    display: block;
+    font-size: 36px;
+    font-weight: bold;
+    color: #00ff66;
+    margin-bottom: 8px;
+}
+
+.stat-label {
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* Features секция */
+.features {
+    padding: 100px 40px;
+}
+
+.features h2 {
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 60px;
+    background: linear-gradient(45deg, #00ff66, #00ffcc);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.feature-card {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    padding: 30px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 255, 102, 0.1);
+}
+
+.feature-icon {
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+.feature-card h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: #00ff66;
+}
+
+.feature-card p {
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.6;
+}
+
+/* Trading Tools секция */
+.trading-tools {
+    padding: 100px 40px;
+    text-align: center;
+}
+
+.trading-tools h2 {
+    font-size: 36px;
+    margin-bottom: 60px;
+    background: linear-gradient(45deg, #00ff66, #00ffcc);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.tools-showcase {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    padding: 20px;
+    backdrop-filter: blur(10px);
+}
+
+/* Медиа-запросы */
+@media (max-width: 768px) {
+    header {
+        padding: 15px 20px;
+    }
+
+    nav {
+        gap: 15px;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .stats {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Анимации */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.feature-card {
+    animation: fadeIn 0.6s ease-out forwards;
+}
+
+.feature-card:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.feature-card:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+.feature-card:nth-child(4) {
+    animation-delay: 0.6s;
+}
+
+/* Переключатель языков */
+.language-switcher {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 9999;
+    background: rgba(26, 26, 46, 0.95);
+    padding: 8px;
+    border-radius: 12px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    gap: 4px;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+.lang-btn {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 8px;
+    background: transparent;
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 14px;
+    font-weight: 500;
+    min-width: 45px;
+    text-align: center;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+.lang-btn.active {
+    background: #64ffda;
+    color: #1a1a2e;
+}
+
+.lang-btn:hover:not(.active) {
+    background: rgba(100, 255, 218, 0.2);
+}
+
+/* Навигационное меню */
+.transparent-window {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    background: rgba(26, 26, 46, 0.95);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    border: 1px solid rgba(100, 255, 218, 0.2);
+    animation: windowGlow 4s ease-in-out infinite;
+}
+
+.nav-menu {
+    max-width: 1200px;
+    margin: 0 auto;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #64ffda;
+}
+
+.logo i {
+    font-size: 1.8rem;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+}
+
+/* Обновленные стили для навигационных ссылок */
+.nav-link {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 8px 12px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    position: relative;
+    overflow: hidden;
+}
+
+.nav-link::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent 0%,
+        rgba(255, 255, 255, 0.1) 45%,
+        rgba(255, 255, 255, 0.2) 50%,
+        rgba(255, 255, 255, 0.1) 55%,
+        transparent 100%
+    );
+    background-size: 200% 100%;
+    animation: lightBeam 4s linear infinite;
+    background-repeat: no-repeat;
+    pointer-events: none;
+}
+
+.nav-link:hover {
+    color: #64ffda;
+    background-color: rgba(100, 255, 218, 0.1);
+}
+
+/* Делаем анимацию последовательной для каждой ссылки */
+.nav-link:nth-child(1)::before { animation-delay: 0s; }
+.nav-link:nth-child(2)::before { animation-delay: 0.8s; }
+.nav-link:nth-child(3)::before { animation-delay: 1.6s; }
+.nav-link:nth-child(4)::before { animation-delay: 2.4s; }
+.nav-link:nth-child(5)::before { animation-delay: 3.2s; }
+
+.nav-link i {
+    font-size: 1.1rem;
+}
+
+/* Hero Section */
+.hero-section {
+    text-align: center;
+    padding: 120px 20px 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.hero-section h1 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    background: linear-gradient(45deg, #64ffda, #a8a8ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: fadeIn 1s ease-out;
+}
+
+.hero-section > p {
+    font-size: 1.2rem;
+    color: #a8a8ff;
+    margin-bottom: 40px;
+    animation: fadeIn 1s ease-out 0.2s backwards;
+}
+
+.hero-stats {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 60px;
+}
+
+.stat-item {
+    text-align: center;
+    animation: fadeIn 0.5s ease-out backwards;
+}
+
+.stat-item:nth-child(1) { animation-delay: 0.4s; }
+.stat-item:nth-child(2) { animation-delay: 0.6s; }
+.stat-item:nth-child(3) { animation-delay: 0.8s; }
+
+.stat-item i {
+    font-size: 2.5rem;
+    color: #64ffda;
+    margin-bottom: 10px;
+}
+
+.stat-item span {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 5px;
+}
+
+.stat-item p {
+    color: #a8a8ff;
+    font-size: 1rem;
+}
+
+/* Header Section */
+.header {
+    text-align: center;
+    padding: 40px 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.header h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+.header p {
+    color: #a8a8ff;
+    margin-bottom: 30px;
+}
+
+/* План и ценовые переключатели */
+.plan-toggle, .price-toggle {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.toggle-btn, .price-btn {
+    background: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.toggle-btn:hover, .price-btn:hover {
+    background: rgba(100, 255, 218, 0.2);
+    transform: translateY(-2px);
+}
+
+.toggle-btn.active, .price-btn.active {
+    background: rgba(100, 255, 218, 0.25);
+    animation: glow 2s infinite;
+}
+
+/* Pricing Grid */
+.pricing-grid {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    transition: all 0.3s ease;
+}
+
+/* Cards */
+.card {
+    background: rgba(26, 26, 46, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 30px;
+    border-radius: 20px;
+    width: 350px;
+    position: relative;
+    transition: all 0.5s ease;
+    border: 2px solid rgba(100, 255, 218, 0.3);
+    animation: borderGlow 3s ease-in-out infinite;
+    opacity: 1;
+    transform: scale(1);
+}
+
+.card.hidden {
+    opacity: 0;
+    transform: scale(0.8);
+    pointer-events: none;
+}
+
+/* Особая подсветка для мастер-карточки */
+.card.master {
+    border: 2px solid rgba(100, 255, 218, 0.4);
+    animation: borderGlow 2s ease-in-out infinite;
+}
+
+/* Усиленная подсветка при наведении */
+.card:hover {
+    border-color: rgba(100, 255, 218, 0.8);
+    box-shadow: 
+        0 0 30px rgba(100, 255, 218, 0.3),
+        inset 0 0 30px rgba(100, 255, 218, 0.1);
+    transform: translateY(-5px);
+}
+
+/* Особая подсветка для мастер-карточки при мгновенном плане */
+.card.master:only-child {
+    border: 2px solid rgba(100, 255, 218, 0.6);
+    box-shadow: 
+        0 0 40px rgba(100, 255, 218, 0.4),
+        inset 0 0 20px rgba(100, 255, 218, 0.2);
+    animation: borderGlow 1.5s ease-in-out infinite;
+}
+
+.card-badge {
+    position: absolute;
+    top: -12px;
+    right: 20px;
+    background: #64ffda;
+    color: #1a1a2e;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.card h2 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    color: #ffffff;
+}
+
+.price {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #64ffda;
+    margin-bottom: 20px;
+}
+
+.card ul {
+    list-style: none;
+    margin-bottom: 30px;
+}
+
+.card li {
+    margin-bottom: 15px;
+    color: #a8a8ff;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.card li:before {
+    content: "✓";
+    color: #64ffda;
+    font-weight: bold;
+}
+
+.card-btn {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 12px;
+    background: #64ffda;
+    color: #1a1a2e;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.card-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(100, 255, 218, 0.3);
+}
+
+/* Features Section */
+.features-section {
+    padding: 80px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.features-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+    color: #ffffff;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.feature-item {
+    padding: 30px;
+    background: rgba(26, 26, 46, 0.95);
+    border-radius: 20px;
+    transition: all 0.3s ease;
+}
+
+.feature-item:hover {
+    transform: translateY(-10px);
+}
+
+.feature-item i {
+    font-size: 2.5rem;
+    color: #64ffda;
+    margin-bottom: 20px;
+}
+
+.feature-item h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: #ffffff;
+}
+
+.feature-item p {
+    color: #a8a8ff;
+}
+
+/* Footer */
+.footer {
+    background: rgba(26, 26, 46, 0.95);
+    padding: 60px 20px 20px;
+    margin-top: 80px;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+}
+
+.footer-section h3 {
+    color: #ffffff;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+}
+
+.footer-section p {
+    color: #a8a8ff;
+    line-height: 1.6;
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+}
+
+.social-links a {
+    color: #64ffda;
+    font-size: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+    transform: translateY(-3px);
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    color: #a8a8ff;
+}
+
+/* Медиа-запросы */
+@media (max-width: 1024px) {
+    .hero-section h1 {
+        font-size: 2.8rem;
+    }
+
+    .nav-links {
+        gap: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Навигация */
+    .transparent-window {
+        height: auto;
+        padding: 15px 0;
+        background: rgba(26, 26, 46, 0.98);
+    }
+
+    .nav-menu {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        width: 100%;
+        gap: 15px;
+    }
+
+    .nav-link {
+        width: 100%;
+        justify-content: center;
+        padding: 15px;
+        background: rgba(255, 255, 255, 0.03);
+        border-radius: 10px;
+        margin: 0 15px;
+    }
+
+    /* Логотип */
+    .logo {
+        padding-left: 15px;
+        font-size: 1.3rem;
+    }
+
+    /* Переключатель языков */
+    .language-switcher {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        background: rgba(26, 26, 46, 0.95);
+        padding: 6px;
+        border-radius: 8px;
+    }
+
+    .lang-btn {
+        padding: 6px 12px;
+        font-size: 13px;
+        min-width: 40px;
+    }
+
+    /* Статистика */
+    .hero-stats {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+        padding: 20px;
+        margin-top: 30px;
+    }
+
+    .stat-item {
+        background: rgba(255, 255, 255, 0.03);
+        padding: 20px;
+        border-radius: 15px;
+        width: 100%;
+        max-width: 280px;
+    }
+
+    .stat-item i {
+        font-size: 2rem;
+        margin-bottom: 15px;
+    }
+
+    .stat-item span {
+        font-size: 1.8rem;
+        margin-bottom: 8px;
+    }
+
+    .stat-item p {
+        font-size: 0.9rem;
+    }
+
+    /* Отступы для контента */
+    .hero-section {
+        padding-top: 280px;
+    }
+
+    /* График */
+    .chart-section {
+        margin: 20px;
+        padding: 20px 10px;
+    }
+
+    .chart-container {
+        height: 300px;
+    }
+
+    .chart-controls {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    /* Карточки планов */
+    .pricing-grid {
+        padding: 20px 10px;
+    }
+
+    .card {
+        width: 100%;
+        max-width: 320px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+
+    /* Кнопки выбора плана и суммы */
+    .plan-toggle, .price-toggle {
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: center;
+        padding: 0 10px;
+    }
+
+    .toggle-btn, .price-btn, .amount-btn {
+        width: calc(50% - 10px);
+        min-width: 120px;
+        padding: 12px;
+        font-size: 0.9rem;
+    }
+
+    /* Features секция */
+    .features-section {
+        padding: 40px 20px;
+    }
+
+    .features-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .feature-item {
+        padding: 20px;
+    }
+
+    /* Footer */
+    .footer {
+        padding: 40px 20px 20px;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        text-align: center;
+    }
+
+    .social-links {
+        justify-content: center;
+    }
+
+    /* Анимации */
+    .card:hover {
+        transform: translateY(-3px);
+    }
+
+    /* Улучшенная читаемость */
+    body {
+        font-size: 14px;
+        line-height: 1.5;
+    }
+
+    h1, h2, h3 {
+        line-height: 1.3;
+    }
+
+    /* Отступы и поля */
+    .section {
+        margin: 40px 0;
+        padding: 0 15px;
+    }
+
+    /* Улучшенная производительность */
+    * {
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    /* Улучшенная прокрутка */
+    .pricing-grid, .features-grid {
+        -webkit-overflow-scrolling: touch;
+    }
+
+    /* Стили для бургер-меню */
+    .burger-menu {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        cursor: pointer;
+        padding: 15px;
+        position: fixed;
+        top: 15px;
+        left: 15px;
+        z-index: 1001;
+    }
+
+    .burger-menu span {
+        display: block;
+        width: 25px;
+        height: 2px;
+        background-color: #64ffda;
+        transition: all 0.3s ease;
+    }
+
+    .transparent-window {
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background: rgba(26, 26, 46, 0.98);
+        padding-top: 60px;
+    }
+
+    .transparent-window.active {
+        transform: translateX(0);
+    }
+
+    /* Анимация бургер-меню */
+    .burger-menu.active span:nth-child(1) {
+        transform: rotate(45deg) translate(6px, 6px);
+    }
+
+    .burger-menu.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .burger-menu.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(6px, -6px);
+    }
+
+    /* Обновленные стили для навигации */
+    .nav-menu {
+        height: auto;
+        padding-top: 20px;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .nav-link {
+        font-size: 1.2rem;
+        padding: 15px;
+        text-align: center;
+    }
+
+    /* Обновленная позиция переключателя языков */
+    .language-switcher {
+        top: 15px;
+        right: 15px;
+    }
+
+    /* Основной контент */
+    .hero-section {
+        padding-top: 80px;
+    }
+}
+
+/* Дополнительные стили для очень маленьких экранов */
+@media (max-width: 360px) {
+    .hero-section h1 {
+        font-size: 1.8rem;
+    }
+
+    .toggle-btn, .price-btn, .amount-btn {
+        width: 100%;
+        margin: 5px 0;
+    }
+
+    .card {
+        padding: 15px;
+    }
+}
+
+/* Анимации для элементов */
+.card.show {
+    animation: fadeIn 0.8s ease-out;
+}
+
+.feature-item {
+    animation: fadeIn 0.5s ease-out backwards;
+}
+
+.feature-item:nth-child(1) { animation-delay: 0.2s; }
+.feature-item:nth-child(2) { animation-delay: 0.4s; }
+.feature-item:nth-child(3) { animation-delay: 0.6s; }
+.feature-item:nth-child(4) { animation-delay: 0.8s; }
+
+.button {
+    background: linear-gradient(45deg, #64ffda, #48bfe3);
+    border: none;
+    padding: 12px 24px;
+    border-radius: 12px;
+    color: #1a1a2e;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #48bfe3, #64ffda);
+    opacity: 0;
+    transition: 0.3s;
+}
+
+.button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(100, 255, 218, 0.3);
+}
+
+.button:hover::before {
+    opacity: 1;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #1a1a2e;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #64ffda;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #48bfe3;
+}
+
+.gradient-text {
+    background: linear-gradient(45deg, #64ffda, #48bfe3);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200% 200%;
+    animation: gradient 3s ease infinite;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #1a1a2e;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9998;
+    transition: opacity 0.5s ease;
+}
+
+.preloader.fade-out {
+    opacity: 0;
+}
+
+.loader {
+    text-align: center;
+    color: #64ffda;
+}
+
+.loader i {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    animation: spin 1s infinite linear;
+}
+
+.loader span {
+    display: block;
+    font-size: 1.2rem;
+    color: #ffffff;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Анимация для элементов при смене языка */
+[data-translate] {
+    transition: opacity 0.3s ease;
+}
+
+.lang-changing [data-translate] {
+    opacity: 0;
+}
+
+.language-loading {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+}
+
+.loading-spinner {
+    width: 40px;
+    height: 40px;
+}
+
+.loading-spinner .circular {
+    animation: rotate 2s linear infinite;
+    transform-origin: center center;
+}
+
+.loading-spinner .path {
+    stroke: #64ffda;
+    stroke-dasharray: 1, 200;
+    stroke-dashoffset: 0;
+    animation: dash 1.5s ease-in-out infinite;
+    stroke-linecap: round;
+}
+
+@keyframes rotate {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes dash {
+    0% {
+        stroke-dasharray: 1, 200;
+        stroke-dashoffset: 0;
+    }
+    50% {
+        stroke-dasharray: 89, 200;
+        stroke-dashoffset: -35px;
+    }
+    100% {
+        stroke-dasharray: 89, 200;
+        stroke-dashoffset: -124px;
+    }
+}
+
+.language-notification {
+    position: fixed;
+    bottom: -100px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(100, 255, 218, 0.9);
+    color: #1a1a2e;
+    padding: 12px 24px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+.language-notification.show {
+    bottom: 20px;
+}
+
+/* График */
+.chart-section {
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 40px auto;
+    background: rgba(26, 26, 46, 0.95);
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.chart-section h2 {
+    text-align: center;
+    color: #fff;
+    margin-bottom: 30px;
+    font-size: 2rem;
+}
+
+.chart-container {
+    width: 100%;
+    height: 400px;
+    margin: 20px 0;
+    padding: 0 20px;
+}
+
+.chart-controls {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 30px;
+}
+
+.chart-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    background: transparent;
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.chart-btn.active {
+    background: #64ffda;
+    color: #1a1a2e;
+}
+
+.chart-btn:hover:not(.active) {
+    background: rgba(100, 255, 218, 0.2);
+}
+
+.amount-btn {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 8px;
+    background: transparent;
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin: 0 5px;
+}
+
+.amount-btn.active {
+    background: #64ffda;
+    color: #1a1a2e;
+}
+
+.amount-btn:hover:not(.active) {
+    background: rgba(100, 255, 218, 0.2);
+}
+
+/* Убедитесь, что весь контент находится поверх canvas */
+.container {
+    position: relative;
+    z-index: 1;
+}
+
+/* Добавить в существующий CSS */
+.language-selector {
+    position: relative;
+    display: inline-block;
+    z-index: 9999; /* Увеличиваем z-index */
+}
+
+.lang-modal {
+    position: absolute;
+    display: none; /* Изменяем с visibility: hidden на display: none */
+    top: 100%;
+    right: 0;
+    background: rgba(21, 25, 18, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
+    padding: 8px;
+    min-width: 180px;
+}
+
+.language-selector.active .lang-modal {
+    display: block; /* Изменяем с visibility: visible на display: block */
+}
+
+.lang-btn {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+}
+
+.lang-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.arrow {
+    font-size: 10px;
+    transition: transform 0.3s ease;
+}
+
+.language-selector.active .arrow {
+    transform: rotate(180deg);
+}
+
+/* Новые стили для языкового селектора */
+.language-dropdown {
+    position: relative;
+    display: inline-block;
+    margin: 0 15px;
+}
+
+.dropbtn {
+    background-color: rgba(0, 255, 102, 0.1);
+    color: white;
+    padding: 10px 20px;
+    border: 1px solid rgba(0, 255, 102, 0.2);
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.dropbtn:hover {
+    background-color: rgba(0, 255, 102, 0.2);
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: rgba(21, 25, 18, 0.95);
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1000;
+    border-radius: 8px;
+    margin-top: 5px;
+    backdrop-filter: blur(10px);
+}
+
+.dropdown-content a {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.dropdown-content a:hover {
+    background-color: rgba(0, 255, 102, 0.1);
+    border-radius: 8px;
+}
+
+/* Показываем выпадающее меню при наведении */
+.language-dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.arrow {
+    font-size: 10px;
+}
+
+.language-dropdown:hover .arrow {
+    transform: rotate(180deg);
+}
+
+/* Стили для hero секции с анимированной подсветкой */
+.hero h1 {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    line-height: 1.2;
+    text-shadow: 0 0 10px rgba(0, 255, 102, 0.3),
+                 0 0 20px rgba(0, 255, 102, 0.2),
+                 0 0 30px rgba(0, 255, 102, 0.1);
+    animation: glow 2s ease-in-out infinite alternate;
+}
+
+.hero h1 span {
+    display: block;
+}
+
+.hero h1 span:first-child {
+    font-size: 0.8em;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.hero h1 span:last-child {
+    font-size: 1.2em;
+    color: rgb(0, 255, 102);
+    font-weight: bold;
+    text-shadow: 0 0 10px rgba(0, 255, 102, 0.5),
+                 0 0 20px rgba(0, 255, 102, 0.3),
+                 0 0 30px rgba(0, 255, 102, 0.2),
+                 0 0 40px rgba(0, 255, 102, 0.1);
+}
+
+@keyframes glow {
+    from {
+        text-shadow: 0 0 10px rgba(0, 255, 102, 0.3),
+                     0 0 20px rgba(0, 255, 102, 0.2),
+                     0 0 30px rgba(0, 255, 102, 0.1);
+    }
+    to {
+        text-shadow: 0 0 20px rgba(0, 255, 102, 0.4),
+                     0 0 30px rgba(0, 255, 102, 0.3),
+                     0 0 40px rgba(0, 255, 102, 0.2),
+                     0 0 50px rgba(0, 255, 102, 0.1);
+    }
+}
+
+.hero p {
+    font-size: 1.5rem;
+    margin-bottom: 40px;
+    color: rgba(255, 255, 255, 0.8);
+    text-shadow: 0 0 10px rgba(0, 255, 102, 0.2);
+}
+
+/* Медиа-запрос для мобильных устройств */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .hero p {
+        font-size: 1.2rem;
+    }
+}
+
+/* Chart Section */
+.chart-section {
+    padding: 100px 40px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.chart-section h2 {
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 40px;
+    background: linear-gradient(45deg, #00ff66, #00ffcc);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.chart-container {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    padding: 30px;
+    backdrop-filter: blur(10px);
+}
+
+.chart-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.chart-title {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.chart-title h3 {
+    font-size: 24px;
+    color: #fff;
+    margin: 0;
+}
+
+.price {
+    font-size: 20px;
+    font-weight: bold;
+    color: #fff;
+}
+
+.change {
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.change.positive {
+    background: rgba(0, 255, 102, 0.1);
+    color: #00ff66;
+}
+
+.change.negative {
+    background: rgba(255, 82, 82, 0.1);
+    color: #ff5252;
+}
+
+.chart-controls {
+    display: flex;
+    gap: 10px;
+}
+
+.time-btn {
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.time-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.time-btn.active {
+    background: rgba(0, 255, 102, 0.2);
+    color: #00ff66;
+}
+
+.chart-wrapper {
+    width: 100%;
+    height: 400px;
+    margin: 20px 0;
+    position: relative;
+}
+
+.chart-info {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.info-item {
+    text-align: center;
+}
+
+.info-item .label {
+    display: block;
+    color: rgba(255, 255, 255, 0.6);
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+
+.info-item .value {
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+}
+
+@media (max-width: 768px) {
+    .chart-header {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .chart-controls {
+        width: 100%;
+        justify-content: space-between;
+    }
+    
+    .chart-wrapper {
+        height: 300px;
+    }
+    
+    .chart-info {
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+}
+
+/* Traders Section */
+.traders-section {
+    padding: 100px 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.traders-section h2 {
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 40px;
+    background: linear-gradient(45deg, #00ff66, #00ffcc);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.traders-container {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 24px;
+    padding: 40px;
+    backdrop-filter: blur(10px);
+}
+
+.traders-header {
+    margin-bottom: 40px;
+}
+
+.traders-stats {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    margin-bottom: 30px;
+}
+
+.traders-stats .stat {
+    text-align: center;
+}
+
+.traders-stats .number {
+    display: block;
+    font-size: 36px;
+    font-weight: bold;
+    color: #00ff66;
+    margin-bottom: 8px;
+}
+
+.traders-stats .label {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 16px;
+}
+
+.traders-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.trader-card {
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 16px;
+    padding: 20px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.trader-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, rgba(0, 255, 102, 0.1), transparent);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.trader-card:hover::before {
+    opacity: 1;
+}
+
+.trader-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0, 255, 102, 0.1);
+}
+
+.trader-rank {
+    font-size: 24px;
+    font-weight: bold;
+    color: rgba(255, 255, 255, 0.5);
+    width: 60px;
+    text-align: center;
+}
+
+.trader-avatar {
+    width: 60px;
+    height: 60px;
+    background: rgba(0, 255, 102, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    margin: 0 20px;
+}
+
+.trader-info {
+    flex: 1;
+}
+
+.trader-info h3 {
+    margin: 0 0 8px 0;
+    color: #fff;
+    font-size: 18px;
+}
+
+.profit-info {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 8px;
+}
+
+.profit {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.profit-percent {
+    font-size: 16px;
+}
+
+.positive {
+    color: #00ff66;
+}
+
+.trade-stats {
+    display: flex;
+    gap: 20px;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 14px;
+}
+
+.follow-btn {
+    background: rgba(0, 255, 102, 0.1);
+    color: #00ff66;
+    border: 1px solid #00ff66;
+    padding: 10px 24px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.follow-btn:hover {
+    background: rgba(0, 255, 102, 0.2);
+    transform: translateY(-2px);
+}
+
+/* Анимации для карточек */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.trader-card {
+    animation: slideIn 0.5s ease-out forwards;
+    opacity: 0;
+}
+
+.trader-card:nth-child(1) { animation-delay: 0.1s; }
+.trader-card:nth-child(2) { animation-delay: 0.2s; }
+.trader-card:nth-child(3) { animation-delay: 0.3s; }
+.trader-card:nth-child(4) { animation-delay: 0.4s; }
+.trader-card:nth-child(5) { animation-delay: 0.5s; }
+
+/* Медиа-запросы */
+@media (max-width: 768px) {
+    .traders-section {
+        padding: 60px 20px;
+    }
+
+    .traders-container {
+        padding: 20px;
+    }
+
+    .traders-stats {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .trader-card {
+        flex-wrap: wrap;
+        justify-content: center;
+        text-align: center;
+        gap: 15px;
+    }
+
+    .trader-info {
+        width: 100%;
+        text-align: center;
+    }
+
+    .profit-info, .trade-stats {
+        justify-content: center;
+    }
+
+    .follow-btn {
+        width: 100%;
+        margin-top: 10px;
+    }
+}
+
+/* How it Works Section */
+.how-it-works {
+    padding: 100px 40px;
+    text-align: center;
+}
+
+.how-it-works h2 {
+    font-size: 36px;
+    margin-bottom: 60px;
+    background: linear-gradient(45deg, #00ff66, #00ffcc);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.steps-container {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.step {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    padding: 30px;
+    transition: transform 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.step:hover {
+    transform: translateY(-10px);
+}
+
+.step-icon {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.step h3 {
+    color: #00ff66;
+    margin-bottom: 15px;
+}
+
+/* Professional Tools Section */
+.tools-section {
+    padding: 100px 40px;
+    text-align: center;
+}
+
+.tools-section h2 {
+    font-size: 36px;
+    margin-bottom: 60px;
+    background: linear-gradient(45deg, #00ff66, #00ffcc);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.tools-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.tool-card {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    padding: 30px;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.tool-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0, 255, 102, 0.1);
+}
+
+.tool-card img {
+    width: 120px;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.tool-card h3 {
+    color: #00ff66;
+    margin-bottom: 15px;
+}
+
+/* Testimonials Section */
+.testimonials {
+    padding: 100px 40px;
+    text-align: center;
+}
+
+.testimonials h2 {
+    font-size: 36px;
+    margin-bottom: 60px;
+    background: linear-gradient(45deg, #00ff66, #00ffcc);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.testimonials-slider {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.testimonial {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    padding: 40px;
+    backdrop-filter: blur(10px);
+}
+
+.quote {
+    font-size: 48px;
+    color: #00ff66;
+    margin-bottom: 20px;
+}
+
+.author {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.author-avatar {
+    font-size: 36px;
+    margin-right: 15px;
+}
+
+.author-info h4 {
+    margin: 0;
+    color: #00ff66;
+}
+
+/* FAQ Section */
+.faq {
+    padding: 100px 40px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.faq h2 {
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 60px;
+    background: linear-gradient(45deg, #00ff66, #00ffcc);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.faq-item {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+.faq-question {
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+.faq-question h3 {
+    margin: 0;
+    font-size: 18px;
+}
+
+.toggle {
+    color: #00ff66;
+    font-size: 24px;
+}
+
+.faq-answer {
+    padding: 0 20px;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.faq-item.active .faq-answer {
+    padding: 20px;
+    max-height: 200px;
+}
+
+/* Footer */
+.main-footer {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    padding: 60px 40px 20px;
+    margin-top: 100px;
+}
+
+.footer-grid {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 40px;
+}
+
+.footer-column h3 {
+    color: #00ff66;
+    margin-bottom: 20px;
+}
+
+.footer-column h4 {
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 10px;
+}
+
+.footer-column ul li a {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-column ul li a:hover {
+    color: #00ff66;
+}
+
+.social-links {
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.social-links a {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 24px;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #00ff66;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Медиа-запросы */
+@media (max-width: 768px) {
+    .steps-container,
+    .tools-container {
+        flex-direction: column;
+    }
+
+    .step,
+    .tool-card {
+        margin-bottom: 20px;
+    }
+
+    .footer-grid {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .social-links {
+        justify-content: center;
+    }
+}
+
+/* Advantages Section */
+.advantages {
+    padding: 100px 40px;
+}
+
+.advantages h2 {
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 60px;
+    background: linear-gradient(45deg, #00ff66, #00ffcc);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.advantages-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.advantage-card {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    padding: 30px;
+    transition: transform 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.advantage-card:hover {
+    transform: translateY(-10px);
+}
+
+.advantage-icon {
+    font-size: 40px;
+    color: #00ff66;
+    margin-bottom: 20px;
+}
+
+.advantage-card h3 {
+    color: #fff;
+    margin-bottom: 15px;
+}
+
+.advantage-card p {
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 20px;
+}
+
+.advantage-card ul {
+    list-style: none;
+    padding: 0;
+}
+
+.advantage-card ul li {
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 10px;
+    padding-left: 20px;
+    position: relative;
+}
+
+.advantage-card ul li:before {
+    content: "→";
+    color: #00ff66;
+    position: absolute;
+    left: 0;
+}
+
+/* Добавим анимацию для карточек */
+@keyframes cardAppear {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.advantage-card {
+    animation: cardAppear 0.5s ease-out forwards;
+    opacity: 0;
+}
+
+.advantage-card:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.advantage-card:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+/* Pricing Section */
+.pricing-section {
+    padding: 100px 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Tabs */
+.pricing-tabs {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.tab-btn {
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    padding: 10px 20px;
+    color: #fff;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.tab-btn.active {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.tab-btn.selected {
+    background: #4169E1;
+}
+
+.limited-badge {
+    position: absolute;
+    top: -15px;
+    right: calc(50% - 80px);
+    background: #FF4B4B;
+    color: white;
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 12px;
+}
+
+/* Account Size Selector */
+.account-size-selector {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 30px 0;
+}
+
+.size-btn {
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    padding: 10px 20px;
+    color: #fff;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.size-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.size-btn.selected {
+    background: #4169E1;
+}
+
+/* Pricing Cards */
+.pricing-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 40px;
+}
+
+.pricing-card {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    padding: 30px;
+    transition: transform 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.pricing-card:hover {
+    transform: translateY(-10px);
+}
+
+.pricing-card.highlighted {
+    background: rgba(65, 105, 225, 0.1);
+    border: 1px solid rgba(65, 105, 225, 0.3);
+}
+
+.card-header {
+    margin-bottom: 30px;
+}
+
+.card-header .stage {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 14px;
+}
+
+.card-header h3 {
+    color: #fff;
+    font-size: 24px;
+    margin: 10px 0;
+}
+
+.feature {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.feature span:first-child {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.feature .value {
+    color: #fff;
+    font-weight: 500;
+}
+
+/* Медиа-запросы для мобильных устройств */
+@media (max-width: 768px) {
+    .pricing-section {
+        padding: 60px 20px;
+    }
+
+    .pricing-cards {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .account-size-selector {
+        flex-wrap: wrap;
+    }
+
+    .size-btn {
+        flex: 1 1 calc(33.333% - 10px);
+        min-width: 80px;
+    }
+
+    .pricing-tabs {
+        flex-wrap: wrap;
+    }
+
+    .tab-btn {
+        flex: 1 1 auto;
+    }
+
+    .limited-badge {
+        position: static;
+        margin-top: 10px;
+        display: inline-block;
+    }
+}
+
+/* Анимации */
+@keyframes cardAppear {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.pricing-card {
+    animation: cardAppear 0.5s ease-out forwards;
+}
+
+.pricing-card:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.pricing-card:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+/* Общие улучшения */
+:root {
+    --primary-color: #4169E1;
+    --primary-gradient: linear-gradient(45deg, #4169E1, #00ff66);
+    --hover-gradient: linear-gradient(45deg, #00ff66, #4169E1);
+    --card-bg: rgba(255, 255, 255, 0.05);
+    --card-hover-bg: rgba(255, 255, 255, 0.08);
+}
+
+/* Улучшенные стили для кнопок */
+.primary-btn, .secondary-btn, .get-started {
+    padding: 15px 30px;
+    border-radius: 12px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.primary-btn {
+    background: var(--primary-gradient);
+    border: none;
+    color: #fff;
+    box-shadow: 0 4px 15px rgba(65, 105, 225, 0.3);
+}
+
+.primary-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(65, 105, 225, 0.4);
+}
+
+.secondary-btn {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+}
+
+.secondary-btn:hover {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Улучшенная навигация */
+nav a {
+    position: relative;
+    padding: 5px 0;
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--primary-gradient);
+    transition: width 0.3s ease;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+/* Улучшенные карточки */
+.pricing-card, .step, .tool-card {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: var(--card-bg);
+    backdrop-filter: blur(15px);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.pricing-card:hover, .step:hover, .tool-card:hover {
+    background: var(--card-hover-bg);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Улучшенные заголовки */
+h1, h2, h3 {
+    background: var(--primary-gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    line-height: 1.3;
+}
+
+/* Улучшенные иконки и бейджи */
+.feature-icon, .step-icon {
+    background: var(--primary-gradient);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+/* Улучшенные эффекты наведения */
+.social-links a {
+    transition: transform 0.3s ease;
+}
+
+.social-links a:hover {
+    transform: scale(1.2);
+}
+
+/* Улучшенные формы */
+input, select, textarea {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    padding: 12px 16px;
+    color: #fff;
+    transition: all 0.3s ease;
+}
+
+input:focus, select:focus, textarea:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px rgba(65, 105, 225, 0.2);
+}
+
+/* Улучшенные уведомления */
+.notification {
+    background: rgba(65, 105, 225, 0.1);
+    border-left: 4px solid var(--primary-color);
+    padding: 15px 20px;
+    border-radius: 0 8px 8px 0;
+    backdrop-filter: blur(10px);
+}
+
+/* Улучшенные анимации */
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+
+.floating {
+    animation: float 4s ease-in-out infinite;
+}
+
+/* Улучшенные медиа-запросы */
+@media (max-width: 768px) {
+    .hero {
+        padding: 120px 20px 60px;
+    }
+
+    .hero h1 {
+        font-size: 36px;
+    }
+
+    .pricing-cards {
+        gap: 20px;
+    }
+
+    .feature-icon, .step-icon {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+/* Улучшенные состояния загрузки */
+.loading {
+    position: relative;
+    overflow: hidden;
+}
+
+.loading::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 200%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.2),
+        transparent
+    );
+    animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+    to {
+        transform: translateX(100%);
+    }
+}
+
+/* Улучшенные переходы между секциями */
+section {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Trading Instruments Section */
+.instruments-section {
+    padding: 80px 40px;
+}
+
+.instruments-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.instrument-card {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    padding: 25px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+.instrument-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(65, 105, 225, 0.3);
+}
+
+.instrument-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.instrument-header img {
+    width: 40px;
+    height: 40px;
+}
+
+.badge {
+    background: var(--primary-gradient);
+    padding: 6px 12px;
+    border-radius: 12px;
+    font-size: 14px;
+    color: white;
+}
+
+.pairs-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.pair {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 8px;
+}
+
+.spread {
+    color: #00ff66;
+    font-size: 14px;
+}
+
+/* Statistics Section */
+.statistics-section {
+    padding: 80px 40px;
+    background: rgba(65, 105, 225, 0.05);
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.stat-card {
+    text-align: center;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    transition: transform 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+}
+
+.stat-icon {
+    font-size: 40px;
+    margin-bottom: 15px;
+}
+
+.stat-number {
+    font-size: 36px;
+    font-weight: bold;
+    background: var(--primary-gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 10px;
+}
+
+.stat-label {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 16px;
+}
+
+/* Forex Section */
+.forex-section {
+    padding: 80px 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Quotes Grid */
+.quotes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    margin-bottom: 50px;
+}
+
+.quote-card {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    padding: 25px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+.quote-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(65, 105, 225, 0.3);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Pair Info */
+.pair-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.currency-icon {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+}
+
+.pair-name {
+    font-size: 18px;
+    font-weight: 600;
+    color: #fff;
+}
+
+/* Quote Data */
+.quote-data {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.price {
+    font-size: 24px;
+    font-weight: bold;
+    font-family: 'Monaco', monospace;
+    color: #fff;
+}
+
+.change {
+    padding: 4px 8px;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+.change.positive {
+    background: rgba(0, 255, 102, 0.1);
+    color: #00ff66;
+}
+
+.change.negative {
+    background: rgba(255, 71, 87, 0.1);
+    color: #ff4757;
+}
+
+/* Spread Info */
+.spread-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 15px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.spread-value {
+    color: #00ff66;
+    font-weight: 500;
+}
+
+/* Economic Calendar */
+.calendar-section {
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 20px;
+    padding: 30px;
+    margin-top: 40px;
+}
+
+.calendar-section h3 {
+    margin-bottom: 25px;
+}
+
+.calendar-grid {
+    overflow-x: auto;
+}
+
+.calendar-header {
+    display: grid;
+    grid-template-columns: 100px 100px 1fr 100px 100px;
+    gap: 20px;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.calendar-header span {
+    color: rgba(255, 255, 255, 0.7);
+    font-weight: 500;
+}
+
+.calendar-events {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.calendar-event {
+    display: grid;
+    grid-template-columns: 100px 100px 1fr 100px 100px;
+    gap: 20px;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.calendar-event:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.impact-high {
+    color: #ff4757;
+}
+
+.impact-medium {
+    color: #ffa502;
+}
+
+.impact-low {
+    color: #00ff66;
+}
+
+/* Анимации */
+@keyframes priceUpdate {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.price-update {
+    animation: priceUpdate 0.3s ease;
+}
+
+/* Медиа-запросы */
+@media (max-width: 768px) {
+    .forex-section {
+        padding: 40px 20px;
+    }
+
+    .quotes-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .calendar-grid {
+        font-size: 14px;
+    }
+
+    .calendar-header,
+    .calendar-event {
+        grid-template-columns: 80px 80px 1fr 80px 80px;
+        gap: 10px;
+        padding: 10px;
+    }
+}
+
+/* Тултипы */
+.tooltip {
+    position: relative;
+}
+
+.tooltip:hover::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 8px 12px;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    border-radius: 6px;
+    font-size: 12px;
+    white-space: nowrap;
+    z-index: 1000;
+}
+
+/* Forex News Section */
+.forex-news-section {
+    padding: 80px 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.news-filters {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.filter-btn {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 8px 20px;
+    border-radius: 20px;
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.filter-btn.active {
+    background: var(--primary-gradient);
+    border-color: transparent;
+}
+
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 25px;
+}
+
+.news-card {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.news-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(65, 105, 225, 0.3);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.news-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.news-content {
+    padding: 20px;
+}
+
+.news-category {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 12px;
+    margin-bottom: 10px;
+    background: rgba(65, 105, 225, 0.1);
+    color: #4169E1;
+}
+
+.news-title {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #fff;
+    line-height: 1.4;
+}
+
+.news-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.news-loader {
+    display: flex;
+    justify-content: center;
+    padding: 40px 0;
+}
+
+.loader-spinner {
+    width: 40px;
+    height: 40px;
+    border: 3px solid rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    border-top-color: #4169E1;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .forex-news-section {
+        padding: 40px 20px;
+    }
+
+    .news-filters {
+        overflow-x: auto;
+        padding-bottom: 10px;
+    }
+
+    .filter-btn {
+        white-space: nowrap;
+    }
+}

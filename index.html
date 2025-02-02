@@ -3,176 +3,633 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TradePro</title>
-    <link rel="stylesheet" href="styles.css">
-    <!-- Добавляем Font Awesome для иконок -->
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>TradePro</title>
 </head>
 <body>
+    <div class="content">
+        <header>
+            <div class="logo">TradePro</div>
+            <button class="mobile-menu-btn">☰</button>
+            <nav>
+                <a href="#home" data-translate="home">Home</a>
+                <a href="#features" data-translate="features">Features</a>
+                <a href="#about" data-translate="about">About</a>
+                <a href="#faq" data-translate="faq">FAQ</a>
+                
+                <!-- Языковой селектор -->
+                <div class="language-dropdown">
+                    <button class="dropbtn">
+                        <span class="selected-lang">EN</span>
+                        <span class="arrow">▼</span>
+                    </button>
+                    <div class="dropdown-content">
+                        <a href="#" data-lang="en">
+                            <span>🇬🇧</span> English
+                        </a>
+                        <a href="#" data-lang="ru">
+                            <span>🇷🇺</span> Русский
+                        </a>
+                        <a href="#" data-lang="ua">
+                            <span>🇺🇦</span> Українська
+                        </a>
+                    </div>
+                </div>
+                
+                <button class="get-started" data-translate="getStarted">Get Started</button>
+            </nav>
+        </header>
+
+        <main>
+            <!-- Hero Section -->
+            <section class="hero" id="home">
+                <h1>
+                    <span data-translate="nextGen">Next Generation</span>
+                    <span data-translate="tradingPlatform">Trading Platform</span>
+                </h1>
+                <p data-translate="advancedTools">Advanced tools for professional traders</p>
+                <div class="hero-buttons">
+                    <button class="primary-btn" data-translate="startTrading">Start Trading</button>
+                    <button class="secondary-btn" data-translate="watchDemo">Watch Demo</button>
+                </div>
+                <div class="stats">
+                    <div class="stat-item">
+                        <span class="stat-number">$2.4B+</span>
+                        <span class="stat-label" data-translate="tradingVolume">Trading Volume</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">150K+</span>
+                        <span class="stat-label" data-translate="activeTraders">Active Traders</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">50+</span>
+                        <span class="stat-label" data-translate="countries">Countries</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Features Section -->
+            <section class="features" id="features">
+                <h2 data-translate="whyChooseUs">Why Choose TradePro</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">📊</div>
+                        <h3 data-translate="realTimeAnalytics">Real-time Analytics</h3>
+                        <p data-translate="analyticsDesc">Advanced market analysis tools with AI-powered insights</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🔒</div>
+                        <h3 data-translate="security">Bank-Grade Security</h3>
+                        <p data-translate="securityDesc">Your assets are protected with military-grade encryption</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">⚡</div>
+                        <h3 data-translate="speed">Lightning Fast</h3>
+                        <p data-translate="speedDesc">Execute trades in milliseconds with our advanced infrastructure</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🤖</div>
+                        <h3 data-translate="automation">Smart Automation</h3>
+                        <p data-translate="automationDesc">Automate your trading strategies with ease</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Trading Tools Section -->
+            <section class="trading-tools">
+                <h2 data-translate="tradingTools">Professional Trading Tools</h2>
+                <div class="tools-showcase">
+                    <div class="tool-preview">
+                        <img src="chart-placeholder.png" alt="Trading Chart">
+                        <div class="tool-overlay">
+                            <h3 data-translate="advancedCharts">Advanced Charts</h3>
+                            <p data-translate="chartsDesc">Professional-grade technical analysis tools</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Добавьте после секции features и перед trading-tools -->
+            <section class="traders-section">
+                <h2 data-translate="topTraders">Top Traders</h2>
+                <div class="traders-container">
+                    <div class="traders-header">
+                        <div class="traders-stats">
+                            <div class="stat">
+                                <span class="number">$2.8M+</span>
+                                <span class="label" data-translate="totalProfit">Total Profit</span>
+                            </div>
+                            <div class="stat">
+                                <span class="number">98%</span>
+                                <span class="label" data-translate="successRate">Success Rate</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="traders-list">
+                        <div class="trader-card">
+                            <div class="trader-rank">#1</div>
+                            <div class="trader-avatar">👨‍💼</div>
+                            <div class="trader-info">
+                                <h3>Alex Thompson</h3>
+                                <div class="profit-info">
+                                    <span class="profit positive">+$324,521</span>
+                                    <span class="profit-percent positive">+45.8%</span>
+                                </div>
+                                <div class="trade-stats">
+                                    <span>789 trades</span>
+                                    <span>99.2% success</span>
+                                </div>
+                            </div>
+                            <button class="follow-btn" data-translate="follow">Follow</button>
+                        </div>
+                        
+                        <div class="trader-card">
+                            <div class="trader-rank">#2</div>
+                            <div class="trader-avatar">👩‍💼</div>
+                            <div class="trader-info">
+                                <h3>Sarah Chen</h3>
+                                <div class="profit-info">
+                                    <span class="profit positive">+$287,954</span>
+                                    <span class="profit-percent positive">+42.3%</span>
+                                </div>
+                                <div class="trade-stats">
+                                    <span>654 trades</span>
+                                    <span>98.7% success</span>
+                                </div>
+                            </div>
+                            <button class="follow-btn" data-translate="follow">Follow</button>
+                        </div>
+
+                        <div class="trader-card">
+                            <div class="trader-rank">#3</div>
+                            <div class="trader-avatar">👨‍💼</div>
+                            <div class="trader-info">
+                                <h3>Michael Rodriguez</h3>
+                                <div class="profit-info">
+                                    <span class="profit positive">+$265,832</span>
+                                    <span class="profit-percent positive">+39.6%</span>
+                                </div>
+                                <div class="trade-stats">
+                                    <span>542 trades</span>
+                                    <span>98.1% success</span>
+                                </div>
+                            </div>
+                            <button class="follow-btn" data-translate="follow">Follow</button>
+                        </div>
+
+                        <div class="trader-card">
+                            <div class="trader-rank">#4</div>
+                            <div class="trader-avatar">👩‍💼</div>
+                            <div class="trader-info">
+                                <h3>Emma Watson</h3>
+                                <div class="profit-info">
+                                    <span class="profit positive">+$243,167</span>
+                                    <span class="profit-percent positive">+37.2%</span>
+                                </div>
+                                <div class="trade-stats">
+                                    <span>478 trades</span>
+                                    <span>97.8% success</span>
+                                </div>
+                            </div>
+                            <button class="follow-btn" data-translate="follow">Follow</button>
+                        </div>
+
+                        <div class="trader-card">
+                            <div class="trader-rank">#5</div>
+                            <div class="trader-avatar">👨‍💼</div>
+                            <div class="trader-info">
+                                <h3>David Kim</h3>
+                                <div class="profit-info">
+                                    <span class="profit positive">+$231,945</span>
+                                    <span class="profit-percent positive">+35.9%</span>
+                                </div>
+                                <div class="trade-stats">
+                                    <span>423 trades</span>
+                                    <span>97.5% success</span>
+                                </div>
+                            </div>
+                            <button class="follow-btn" data-translate="follow">Follow</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Заменяем секцию Professional Tools на Pricing -->
+            <section class="pricing-section">
+                <div class="pricing-tabs">
+                    <button class="tab-btn active" data-translate="instant">Instant</button>
+                    <button class="tab-btn" data-translate="step1">1 step</button>
+                    <button class="tab-btn selected" data-translate="step2">2 step</button>
+                    <span class="limited-badge" data-translate="limitedTime">Limited time</span>
+                </div>
+
+                <div class="account-size-selector">
+                    <button class="size-btn">$5K</button>
+                    <button class="size-btn">$10K</button>
+                    <button class="size-btn">$25K</button>
+                    <button class="size-btn">$50K</button>
+                    <button class="size-btn selected">$100K</button>
+                </div>
+
+                <div class="pricing-cards">
+                    <div class="pricing-card">
+                        <div class="card-header">
+                            <span class="stage" data-translate="evaluationStage">Evaluation Stage</span>
+                            <h3 data-translate="student">Student</h3>
+                        </div>
+                        <div class="card-content">
+                            <div class="feature">
+                                <span data-translate="tradingPeriod">Trading Period</span>
+                                <span class="value">Unlimited</span>
+                            </div>
+                            <div class="feature">
+                                <span data-translate="minTradingDays">Minimum Trading Days</span>
+                                <span class="value">3 days</span>
+                            </div>
+                            <div class="feature">
+                                <span data-translate="maxDailyLoss">Maximum Daily Loss</span>
+                                <span class="value">5%</span>
+                            </div>
+                            <div class="feature">
+                                <span data-translate="maxLoss">Maximum Loss</span>
+                                <span class="value">10%</span>
+                            </div>
+                            <div class="feature">
+                                <span data-translate="profitTarget">Profit Target</span>
+                                <span class="value">$8.000 (8%)</span>
+                            </div>
+                            <div class="feature">
+                                <span data-translate="leverage">Leverage</span>
+                                <span class="value">1:100</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pricing-card">
+                        <div class="card-header">
+                            <span class="stage" data-translate="evaluationStage">Evaluation Stage</span>
+                            <h3 data-translate="practitioner">Practitioner</h3>
+                        </div>
+                        <div class="card-content">
+                            <div class="feature">
+                                <span data-translate="tradingPeriod">Trading Period</span>
+                                <span class="value">Unlimited</span>
+                            </div>
+                            <div class="feature">
+                                <span data-translate="minTradingDays">Minimum Trading Days</span>
+                                <span class="value">3 days</span>
+                            </div>
+                            <div class="feature">
+                                <span data-translate="maxDailyLoss">Maximum Daily Loss</span>
+                                <span class="value">5%</span>
+                            </div>
+                            <div class="feature">
+                                <span data-translate="maxLoss">Maximum Loss</span>
+                                <span class="value">10%</span>
+                            </div>
+                            <div class="feature">
+                                <span data-translate="profitTarget">Profit Target</span>
+                                <span class="value">$5.000 (5%)</span>
+                            </div>
+                            <div class="feature">
+                                <span data-translate="leverage">Leverage</span>
+                                <span class="value">1:100</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pricing-card highlighted">
+                        <div class="card-header">
+                            <h3 data-translate="master">Master</h3>
+                        </div>
+                        <div class="card-content">
+                            <div class="feature">
+                                <span data-translate="tradingPeriod">Trading Period</span>
+                                <span class="value">Unlimited</span>
+                            </div>
+                            <div class="feature">
+                                <span data-translate="maxDailyLoss">Maximum Daily Loss</span>
+                                <span class="value">5%</span>
+                            </div>
+                            <div class="feature">
+                                <span data-translate="maxLoss">Maximum Loss</span>
+                                <span class="value">10%</span>
+                            </div>
+                            <div class="feature">
+                                <span data-translate="profitTarget">Profit Target</span>
+                                <span class="value">-</span>
+                            </div>
+                            <div class="feature">
+                                <span data-translate="leverage">Leverage</span>
+                                <span class="value">1:100</span>
+                            </div>
+                            <div class="feature">
+                                <span data-translate="rewardsAndSplit">Rewards & Split</span>
+                                <span class="value">Flexible</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Testimonials Section -->
+            <section class="testimonials">
+                <h2 data-translate="testimonials">What Our Traders Say</h2>
+                <div class="testimonials-slider">
+                    <div class="testimonial">
+                        <div class="quote">❝</div>
+                        <p data-translate="testimonial1">Best trading platform I've ever used. The tools are incredible!</p>
+                        <div class="author">
+                            <div class="author-avatar">👨‍💼</div>
+                            <div class="author-info">
+                                <h4>John Doe</h4>
+                                <span data-translate="proTrader">Professional Trader</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- More testimonials -->
+                </div>
+            </section>
+
+            <!-- FAQ Section -->
+            <section class="faq" id="faq">
+                <h2 data-translate="faqTitle">Frequently Asked Questions</h2>
+                <div class="faq-container">
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3 data-translate="faq1">How do I start trading?</h3>
+                            <span class="toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p data-translate="faq1answer">Register an account, complete verification, fund your account, and start trading!</p>
+                        </div>
+                    </div>
+                    <!-- More FAQ items -->
+                </div>
+            </section>
+
+            <!-- После секции How it Works -->
+            <section class="advantages">
+                <h2 data-translate="advantages">Our Advantages</h2>
+                <div class="advantages-grid">
+                    <div class="advantage-card">
+                        <div class="advantage-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3 data-translate="security">Security</h3>
+                        <p data-translate="securityDesc">Advanced encryption and secure storage of funds</p>
+                        <ul>
+                            <li>Two-factor authentication</li>
+                            <li>Cold storage</li>
+                            <li>Regular security audits</li>
+                        </ul>
+                    </div>
+                    <div class="advantage-card">
+                        <div class="advantage-icon">
+                            <i class="fas fa-bolt"></i>
+                        </div>
+                        <h3 data-translate="speed">Speed</h3>
+                        <p data-translate="speedDesc">Lightning-fast execution</p>
+                        <ul>
+                            <li>0.1ms execution</li>
+                            <li>No requotes</li>
+                            <li>99.9% uptime</li>
+                        </ul>
+                    </div>
+                    <div class="advantage-card">
+                        <div class="advantage-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3 data-translate="tools">Pro Tools</h3>
+                        <p data-translate="toolsDesc">Professional trading tools</p>
+                        <ul>
+                            <li>Advanced charts</li>
+                            <li>Trading signals</li>
+                            <li>Market analysis</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Trading Instruments Section -->
+            <section class="instruments-section">
+                <h2 data-translate="tradingInstruments">Trading Instruments</h2>
+                <div class="instruments-grid">
+                    <div class="instrument-card">
+                        <div class="instrument-header">
+                            <img src="path/to/forex.svg" alt="Forex">
+                            <span class="badge">Forex</span>
+                        </div>
+                        <div class="pairs-list">
+                            <div class="pair">
+                                <span>EUR/USD</span>
+                                <span class="spread">0.1</span>
+                            </div>
+                            <div class="pair">
+                                <span>GBP/USD</span>
+                                <span class="spread">0.3</span>
+                            </div>
+                            <div class="pair">
+                                <span>USD/JPY</span>
+                                <span class="spread">0.2</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="instrument-card">
+                        <div class="instrument-header">
+                            <img src="path/to/crypto.svg" alt="Crypto">
+                            <span class="badge">Crypto</span>
+                        </div>
+                        <div class="pairs-list">
+                            <div class="pair">
+                                <span>BTC/USD</span>
+                                <span class="spread">1.5</span>
+                            </div>
+                            <div class="pair">
+                                <span>ETH/USD</span>
+                                <span class="spread">0.8</span>
+                            </div>
+                            <div class="pair">
+                                <span>XRP/USD</span>
+                                <span class="spread">0.4</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="instrument-card">
+                        <div class="instrument-header">
+                            <img src="path/to/stocks.svg" alt="Stocks">
+                            <span class="badge">Stocks</span>
+                        </div>
+                        <div class="pairs-list">
+                            <div class="pair">
+                                <span>AAPL</span>
+                                <span class="spread">0.05%</span>
+                            </div>
+                            <div class="pair">
+                                <span>TSLA</span>
+                                <span class="spread">0.07%</span>
+                            </div>
+                            <div class="pair">
+                                <span>MSFT</span>
+                                <span class="spread">0.06%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Statistics Section -->
+            <section class="statistics-section">
+                <h2 data-translate="tradingStats">Trading Statistics</h2>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon">👥</div>
+                        <div class="stat-number" data-value="50000">0</div>
+                        <div class="stat-label" data-translate="activeTraders">Active Traders</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">💰</div>
+                        <div class="stat-number" data-value="1000000">0</div>
+                        <div class="stat-label" data-translate="tradingVolume">Trading Volume</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">🌍</div>
+                        <div class="stat-number" data-value="150">0</div>
+                        <div class="stat-label" data-translate="countries">Countries</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Forex Live Quotes Section -->
+            <section class="forex-section">
+                <h2 data-translate="liveQuotes">Live Forex Quotes</h2>
+                
+                <div class="quotes-grid">
+                    <div class="quote-card">
+                        <div class="pair-info">
+                            <img src="path/to/eur.svg" alt="EUR" class="currency-icon">
+                            <img src="path/to/usd.svg" alt="USD" class="currency-icon">
+                            <span class="pair-name">EUR/USD</span>
+                        </div>
+                        <div class="quote-data">
+                            <span class="price">1.2345</span>
+                            <span class="change positive">+0.05%</span>
+                        </div>
+                        <div class="spread-info">
+                            <span data-translate="spread">Spread</span>
+                            <span class="spread-value">0.2</span>
+                        </div>
+                    </div>
+
+                    <div class="quote-card">
+                        <div class="pair-info">
+                            <img src="path/to/gbp.svg" alt="GBP" class="currency-icon">
+                            <img src="path/to/usd.svg" alt="USD" class="currency-icon">
+                            <span class="pair-name">GBP/USD</span>
+                        </div>
+                        <div class="quote-data">
+                            <span class="price">1.3456</span>
+                            <span class="change negative">-0.03%</span>
+                        </div>
+                        <div class="spread-info">
+                            <span data-translate="spread">Spread</span>
+                            <span class="spread-value">0.3</span>
+                        </div>
+                    </div>
+
+                    <div class="quote-card">
+                        <div class="pair-info">
+                            <img src="path/to/usd.svg" alt="USD" class="currency-icon">
+                            <img src="path/to/jpy.svg" alt="JPY" class="currency-icon">
+                            <span class="pair-name">USD/JPY</span>
+                        </div>
+                        <div class="quote-data">
+                            <span class="price">110.45</span>
+                            <span class="change positive">+0.02%</span>
+                        </div>
+                        <div class="spread-info">
+                            <span data-translate="spread">Spread</span>
+                            <span class="spread-value">0.4</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Economic Calendar -->
+                <div class="calendar-section">
+                    <h3 data-translate="economicCalendar">Economic Calendar</h3>
+                    <div class="calendar-grid">
+                        <div class="calendar-header">
+                            <span data-translate="time">Time</span>
+                            <span data-translate="currency">Currency</span>
+                            <span data-translate="event">Event</span>
+                            <span data-translate="impact">Impact</span>
+                            <span data-translate="forecast">Forecast</span>
+                        </div>
+                        <div class="calendar-events">
+                            <!-- Events will be populated by JavaScript -->
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Forex News Section -->
+            <section class="forex-news-section">
+                <h2 data-translate="forexNews">Forex News</h2>
+                
+                <div class="news-container">
+                    <div class="news-filters">
+                        <button class="filter-btn active" data-filter="all" data-translate="allNews">All News</button>
+                        <button class="filter-btn" data-filter="market" data-translate="marketNews">Market</button>
+                        <button class="filter-btn" data-filter="analysis" data-translate="analysis">Analysis</button>
+                    </div>
+                    
+                    <div class="news-grid">
+                        <!-- News items will be added here dynamically -->
+                    </div>
+                    
+                    <div class="news-loader">
+                        <div class="loader-spinner"></div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+    
     <canvas id="neuro"></canvas>
     
-    <header>
-        <div class="logo">TradePro</div>
-        <nav>
-            <a href="#home" data-translate="home">Home</a>
-            <a href="#features" data-translate="features">Features</a>
-            <a href="#about" data-translate="about">About</a>
-            <a href="#faq" data-translate="faq">FAQ</a>
-            <div class="language-dropdown">
-                <button class="dropbtn">
-                    <span class="selected-lang">EN</span>
-                    <span class="arrow">▼</span>
-                </button>
-                <div class="dropdown-content">
-                    <a href="#" data-lang="en">
-                        <span>🇬🇧</span> English
-                    </a>
-                    <a href="#" data-lang="ru">
-                        <span>🇷🇺</span> Русский
-                    </a>
-                    <a href="#" data-lang="ua">
-                        <span>🇺🇦</span> Українська
-                    </a>
-                </div>
-            </div>
-            <button class="get-started" data-translate="getStarted">Get Started</button>
-        </nav>
-    </header>
-
-    <main>
-        <section class="hero">
-            <h1>
-                <span data-translate="nextGen">Next Generation</span><br>
-                <span data-translate="tradingPlatform">Trading Platform</span>
-            </h1>
-            <p data-translate="advancedTools">Advanced tools for professional traders</p>
-            <div class="hero-buttons">
-                <button class="start-trading" data-translate="startTrading">Start Trading</button>
-                <button class="learn-more" data-translate="learnMore">Learn More</button>
-            </div>
-        </section>
-
-        <section class="features">
-            <div class="feature">
-                <span class="icon">📊</span>
-                <h3 data-translate="realTimeAnalytics">Real-time Analytics</h3>
-                <p data-translate="analyticsDesc">Advanced market analysis tools</p>
-            </div>
-            <div class="feature">
-                <span class="icon">🔒</span>
-                <h3 data-translate="secureTrading">Secure Trading</h3>
-                <p data-translate="securityDesc">Enterprise-grade security</p>
-            </div>
-            <div class="feature">
-                <span class="icon">⚡</span>
-                <h3 data-translate="fastExecution">Fast Execution</h3>
-                <p data-translate="executionDesc">Lightning-fast order execution</p>
-            </div>
-            <div class="feature">
-                <span class="icon">🤖</span>
-                <h3 data-translate="aiPowered">AI Powered</h3>
-                <p data-translate="aiDesc">Smart trading algorithms</p>
-            </div>
-        </section>
-
-        <section class="pricing">
-            <h2 data-translate="choosePlan">Choose Your Plan</h2>
-            <div class="pricing-cards">
-                <div class="price-card">
-                    <h3 data-translate="starter">Starter</h3>
-                    <div class="price">$29<span>/mo</span></div>
-                    <ul>
-                        <li data-translate="basicAnalytics">Basic Analytics</li>
-                        <li data-translate="tradingPairs">5 Trading Pairs</li>
-                        <li data-translate="standardSupport">Standard Support</li>
-                    </ul>
-                    <button data-translate="selectPlan">Select Plan</button>
-                </div>
-
-                <div class="price-card popular">
-                    <div class="popular-badge" data-translate="popular">Popular</div>
-                    <h3 data-translate="professional">Professional</h3>
-                    <div class="price">$99<span>/mo</span></div>
-                    <ul>
-                        <li data-translate="advancedAnalytics">Advanced Analytics</li>
-                        <li data-translate="unlimitedTrading">Unlimited Trading</li>
-                        <li data-translate="support247">24/7 Support</li>
-                    </ul>
-                    <button data-translate="selectPlan">Select Plan</button>
-                </div>
-
-                <div class="price-card">
-                    <h3 data-translate="enterprise">Enterprise</h3>
-                    <div class="price" data-translate="custom">Custom</div>
-                    <ul>
-                        <li data-translate="customSolutions">Custom Solutions</li>
-                        <li data-translate="dedicatedServer">Dedicated Server</li>
-                        <li data-translate="personalManager">Personal Manager</li>
-                    </ul>
-                    <button data-translate="contactUs">Contact Us</button>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-content">
-            <div class="footer-section">
-                <h3 data-translate="aboutCompany">О компании</h3>
-                <p data-translate="companyDesc">TradePro - ведущая платформа для профессиональной торговли с передовыми технологиями и инновационными решениями.</p>
-            </div>
-            <div class="footer-section">
-                <h3 data-translate="contacts">Контакты</h3>
-                <p><i class="fas fa-envelope"></i> support@tradepro.com</p>
-                <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
-            </div>
-            <div class="footer-section">
-                <h3 data-translate="social">Социальные сети</h3>
-                <div class="social-links">
-                    <a href="#"><i class="fab fa-telegram"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-linkedin"></i></a>
-                </div>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p data-translate="copyright">© 2024 TradePro. Все права защищены.</p>
-        </div>
-    </footer>
-
-    <script src="script.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script type="x-shader/x-vertex" id="vertShader">
+    <script type="x-shader/x-fragment" id="vertShader">
         precision mediump float;
-
+    
         varying vec2 vUv;
         attribute vec2 a_position;
-
+    
         void main() {
             vUv = .5 * (a_position + 1.);
             gl_Position = vec4(a_position, 0.0, 1.0);
         }
     </script>
-
+    
     <script type="x-shader/x-fragment" id="fragShader">
         precision mediump float;
-
+    
         varying vec2 vUv;
         uniform float u_time;
         uniform float u_ratio;
         uniform vec2 u_pointer_position;
         uniform float u_scroll_progress;
-
+    
         vec2 rotate(vec2 uv, float th) {
             return mat2(cos(th), sin(th), -sin(th), cos(th)) * uv;
         }
-
+    
         float neuro_shape(vec2 uv, float t, float p) {
             vec2 sine_acc = vec2(0.);
             vec2 res = vec2(0.);
             float scale = 8.;
-
+    
             for (int j = 0; j < 15; j++) {
                 uv = rotate(uv, 1.);
                 sine_acc = rotate(sine_acc, 1.);
@@ -183,34 +640,34 @@
             }
             return res.x + res.y;
         }
-
+    
         void main() {
             vec2 uv = .5 * vUv;
             uv.x *= u_ratio;
-
+    
             vec2 pointer = vUv - u_pointer_position;
             pointer.x *= u_ratio;
             float p = clamp(length(pointer), 0., 1.);
             p = .5 * pow(1. - p, 2.);
-
+    
             float t = .001 * u_time;
             vec3 color = vec3(0.);
-
+    
             float noise = neuro_shape(uv, t, p);
-
+    
             noise = 1.2 * pow(noise, 3.);
             noise += pow(noise, 10.);
             noise = max(.0, noise - .5);
             noise *= (1. - length(vUv - .5));
-
-            // Используем зеленый цвет для соответствия дизайну
-            color = vec3(0.0, 1.0, 0.4);
-
+    
+            color = normalize(vec3(.2, .5 + .4 * cos(3. * u_scroll_progress), .5 + .5 * sin(3. * u_scroll_progress)));
+    
             color = color * noise;
-
+    
             gl_FragColor = vec4(color, noise);
         }
     </script>
-    <script defer src="background.js"></script>
+
+    <script src="main.js"></script>
 </body>
 </html>
